@@ -1,0 +1,110 @@
+require:
+  - rubocop-graphql
+  - rubocop-minitest
+  - rubocop-rails
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - "bin/**/*"
+    - "db/schema.rb"
+    - "data/**/*"
+    - "log/**/*"
+    - "tmp/**/*"
+    - "node_modules/**/*"
+    - "vendor/**/*"
+  TargetRubyVersion: 3.1
+  NewCops: enable
+
+GraphQL/ArgumentDescription:
+  Enabled: false # We only replicate the structure of Concierge
+GraphQL/FieldDescription:
+  Enabled: false # We only replicate the structure of Concierge
+GraphQL/ObjectDescription:
+  Enabled: false # We only replicate the structure of Concierge
+GraphQL/ExtractType:
+  Enabled: false # This seems to produce a lot of false positives
+GraphQL/ExtractInputType:
+  Enabled: false # This also seems to produce a lot of false positives
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+Layout/EmptyLinesAroundAttributeAccessor:
+  Enabled: true
+Layout/LineLength:
+  AllowedPatterns: ['^# ']
+Layout/SpaceAroundMethodCallOperator:
+  Enabled: true
+
+
+Lint/RaiseException:
+  Enabled: true
+Lint/StructNewOverride:
+  Enabled: true
+Lint/DeprecatedOpenSSLConstant:
+  Enabled: true
+Lint/MixedRegexpCaptureTypes:
+  Enabled: true
+
+
+Metrics/BlockLength:
+  Enabled: false
+Metrics/BlockNesting:
+  Max: 4
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+Metrics/ModuleLength:
+  Enabled: false
+
+Naming/PredicateName:
+  Enabled: true
+  AllowedMethods:
+    - is_a?
+    - has_short_version
+    - has_short_version?
+    - has_lists_enabled
+    - has_lists_enabled_for_election
+
+Rails/ActionOrder:
+  ExpectedOrder:
+    - index
+    - new
+    - create
+    - show
+    - edit
+    - update
+    - destroy
+Rails/ContentTag:
+  Enabled: true
+  Exclude:
+    - app/models/**/*.rb
+    - test/factories/**/*.rb
+Rails/DynamicFindBy:
+  Enabled: true
+  AllowedMethods: [find_by_jwt] # We add the methods we define ourselves
+
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+Style/ExponentialNotation:
+  Enabled: true
+Style/SlicingWithRange:
+  Enabled: true
+Style/RedundantFetchBlock:
+  Enabled: true
+Style/RedundantRegexpCharacterClass:
+  Enabled: true
+Style/RedundantRegexpEscape:
+  Enabled: true
