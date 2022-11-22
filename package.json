@@ -1,9 +1,43 @@
 {
+  "name": "app",
+  "private": "true",
+  "version": "0.0.1",
+  "scripts": {
+    "lint:css": "stylelint 'app/assets/stylesheets/**/*.{css,scss}' --ignore-path .gitignore",
+    "lint:js": "eslint app  --ext js,jsx,ts --ignore-path .gitignore --fix"
+  },
+  "dependencies": {
+    "@hotwired/turbo-rails": "^7.2.4",
+    "@mdi/font": "^7.0.96",
+    "@rails/ujs": "^7.0.4",
+    "alpinejs": "^3.10.4",
+    "autoprefixer": "^10.4.12",
+    "postcss": "^8.4.18",
+    "postcss-custom-media": "^8.0.2",
+    "postcss-import": "^15.0.0",
+    "postcss-logical": "^5.0.4",
+    "postcss-nesting": "^10.2.0",
+    "sortablejs": "^1.15.0",
+    "tinymce": "^6.2.0",
+    "vite": "^3.2.0",
+    "vite-plugin-ruby": "^3.1.0"
+  },
   "devDependencies": {
     "@tree-company/eslint-config": "^0.0.9",
     "@tree-company/stylelint-config": "^0.0.9",
-    "eslint": "^8.28.0",
+    "eslint": "^8.26.0",
     "prettier": "^2.7.1",
-    "stylelint": "^14.15.0"
+    "stylelint": "^14.14.0"
+
+  },
+  "eslintConfig": {
+    "extends": [
+      "@tree-company/eslint-config"
+    ]
+  },
+  "stylelint": {
+    "extends": [
+      "@tree-company/stylelint-config"
+    ]
   }
 }
