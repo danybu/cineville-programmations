@@ -1,0 +1,5 @@
+<div class="screening-tile" style="background-image: url(<%= @screening[:movie_info][:image] %>)">
+  <%= @screening[:time].strftime("%H:%M") %>
+  <%= @screening[:movie_info][:title] %>
+  <%= @screening[:cinema] %>
+</div>

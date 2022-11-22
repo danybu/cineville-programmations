@@ -1,0 +1,17 @@
+<div class="sorted-screenings-container">
+  <div class="timeline"></div>
+  <div class="screening-tiles">
+  <% @grouped_screenings.each do |screening_time, screenings| %>
+    <div class="time-band">
+      <div class="time-indication">
+        <span class="time-indication__hour"><%= screening_time.strftime("%H") %></span>
+        <span class="time-indication__minutes"><%= screening_time.strftime("%M") %></span>
+      </div>
+      <% screenings.each do |screening_el| %>
+        <%= render ScreeningComponent.new(screening: screening_el) do |screening| %>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  </div>
+</div>
