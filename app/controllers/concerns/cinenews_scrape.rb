@@ -58,7 +58,7 @@ module CinenewsScrape
       movies_noko.each do |movie_noko|
         movie_info = extract_movie_info_from_scrape(movie_noko)
         cinema_scrape[movie_info[:id]] = {
-          movie_info: movie_info,
+          movie_info:,
           screening_info: extract_screenings_from_scrape(movie_id_arg: movie_info[:id],
                                                          noko: movie_noko, cinema_arg: cinema)
         }

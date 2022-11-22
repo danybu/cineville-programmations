@@ -1,5 +1,11 @@
-<div class="screening-tile" style="background-image: url(<%= @screening[:movie_info][:image] %>)">
-  <%= @screening[:time].strftime("%H:%M") %>
-  <%= @screening[:movie_info][:title] %>
-  <%= @screening[:cinema] %>
+<div class="screening-tile">
+  <div class="screening-tile__top">
+    <%= @screening[:time].strftime("%H:%M") %>
+    <%= @screening[:movie_info][:title] %>
+  </div>
+  <div class="screening-tile__middle" style="background-image: url(<%= @screening[:movie_info][:image] %>)">
+  </div>
+  <div class="screening-tile__bottom">
+    <%= @screening[:cinema] %>
+  </div>
 </div>

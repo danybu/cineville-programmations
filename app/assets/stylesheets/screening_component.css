@@ -1,0 +1,50 @@
+.sorted-screenings-container {
+  display: flex;
+}
+
+.timeline {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 40px;
+  background: linear-gradient(to bottom, #888, #3ff);
+}
+
+.screening-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  min-height: 350px;
+  margin: 1rem;
+  border: 1px solid black;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.time-band {
+  display: flex;
+}
+
+.time-indication {
+  position: relative;
+  left: -20px;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.time-indication__hour {
+  font-size: 50px;
+}
+
+.screening-tile__top,
+.screening-tile__bottom {
+  padding: 0.3rem 0.7rem;
+  background: white;
+}
+
+.screening-tile__middle {
+  flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+}
