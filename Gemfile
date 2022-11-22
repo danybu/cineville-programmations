@@ -46,6 +46,7 @@ gem 'bootsnap', require: false
 
 gem 'nokogiri'
 gem 'open-uri'
+gem 'view_component'
 
 # Use Sass to process CSS
 # gem "sassc-rails"
