@@ -1,33 +1,48 @@
 .sorted-screenings-container {
   display: flex;
+  gap: 8px;
+  background: linear-gradient(to bottom, #111, #999);
 }
 
 .timeline {
   flex-grow: 0;
   flex-shrink: 0;
-  width: 40px;
+  width: 2.5vw;
   background: linear-gradient(to bottom, #888, #3ff);
+}
+
+.screening-tiles {
+  flex-grow: 1;
 }
 
 .screening-tile {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 200px;
-  min-height: 350px;
-  margin: 1rem;
-  border: 1px solid black;
-  border-radius: 25px;
+  width: 220px;
+  min-height: 400px;
+  border-radius: 1.2rem;
   overflow: hidden;
 }
 
 .time-band {
   display: flex;
+  margin-bottom: 0.5rem;
+}
+
+.time-band__screenings {
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
 }
 
 .time-indication {
   position: relative;
   left: -20px;
+  min-width: 6rem;
+  color: #bbb;
   font-size: 20px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -38,12 +53,17 @@
 
 .screening-tile__top,
 .screening-tile__bottom {
-  padding: 0.3rem 0.7rem;
+  padding: 0.9rem 1.2rem;
   background: white;
 }
 
-.screening-tile__middle {
+.screening-tile__middle-link {
   flex-grow: 1;
+  height: 100%;
+}
+
+.screening-tile__middle {
+  height: 100%;
   background-repeat: no-repeat;
   background-position: top;
   background-size: cover;

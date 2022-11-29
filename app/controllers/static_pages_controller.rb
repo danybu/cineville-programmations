@@ -8,7 +8,10 @@ class StaticPagesController < ApplicationController
     @sorted_screenings = all_info[:sorted_screenings]
     @sorted_screenings.each do |screening|
       screening[:movie_info] = all_info[:movies].find { |movie| movie[:id] == screening[:movie_id] }
+      Rails.logger.debug screening[:movie_info]
     end
-    @grouped_screenings = @sorted_screenings.group_by { |screening| screening[:time] }
+    @grouped_screenings = @sorted_screenings.group_by do |screening|
+      screening[:time] - ((screening[:time].min % 30) * 60)
+    end
   end
 end

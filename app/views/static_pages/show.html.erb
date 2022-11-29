@@ -7,10 +7,12 @@
         <span class="time-indication__hour"><%= screening_time.strftime("%H") %></span>
         <span class="time-indication__minutes"><%= screening_time.strftime("%M") %></span>
       </div>
-      <% screenings.each do |screening_el| %>
-        <%= render ScreeningComponent.new(screening: screening_el) do |screening| %>
+      <div class="time-band__screenings">
+        <% screenings.each do |screening_el| %>
+          <%= render ScreeningComponent.new(screening: screening_el) do |screening| %>
+          <% end %>
         <% end %>
-      <% end %>
+      </div>
     </div>
   <% end %>
   </div>

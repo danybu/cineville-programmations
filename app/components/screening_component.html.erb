@@ -3,8 +3,10 @@
     <%= @screening[:time].strftime("%H:%M") %>
     <%= @screening[:movie_info][:title] %>
   </div>
+  <%= link_to "https://www.cinenews.be#{@screening[:movie_info][:url]}", target: :_blank, class: "screening-tile__middle-link" do %>
   <div class="screening-tile__middle" style="background-image: url(<%= @screening[:movie_info][:image] %>)">
   </div>
+  <% end %>
   <div class="screening-tile__bottom">
     <%= @screening[:cinema] %>
   </div>
